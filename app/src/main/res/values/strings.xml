@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">ConstraintLayout</string>
+    <string name="title_bar">PATIENT DETAILS</string>
+    <string name="patient_id">PATIENT ID</string>
+    <string name="patient_fname">FIRST NAME</string>
+    <string name="patient_lname">LAST NAME</string>
+    <string name="dob">DATE OF BIRTH</string>
+    <string name="patient_number">PHONE NUMBER</string>
+    <string name="patient_email">EMAIL</string>
+    <string name="patient_lens">LENS</string>
+    <string name="patient_history">PATIENT HISTORY</string>
+    <string name="doctor_name">DOCTOR NAME</string>
+    <string name="patient_blood_group">BLOOD GROUP</string>
+
+    <string name="button2">SAVE</string>
+</resources>
