@@ -11,6 +11,9 @@
     <string name="patient_history">PATIENT HISTORY</string>
     <string name="doctor_name">DOCTOR NAME</string>
     <string name="patient_blood_group">BLOOD GROUP</string>
-
+    <string name="left">LEFT</string>
+    <string name="right">RIGHT</string>
+    <string name="select">SELECT EYE</string>
+    <string name="brightness">BRIGHTNESS LEVEL</string>
     <string name="button2">SAVE</string>
 </resources>

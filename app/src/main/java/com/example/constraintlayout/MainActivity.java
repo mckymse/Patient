@@ -3,6 +3,7 @@ package com.example.constraintlayout;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -78,6 +79,8 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this,"PATIENT RECORD INSERTED",Toast.LENGTH_LONG).show();
                 else
                     Toast.makeText(MainActivity.this,"INSERTION FAILURE",Toast.LENGTH_LONG).show();
+                Intent intent=new Intent(MainActivity.this,SecondPage.class);
+                startActivity(intent);
 
             }
         });
