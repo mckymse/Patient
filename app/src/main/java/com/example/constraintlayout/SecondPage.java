@@ -18,7 +18,7 @@ public class SecondPage extends AppCompatActivity {
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(SecondPage.this,ThirdPage.class);
+                Intent intent=new Intent(SecondPage.this,StartPage.class);
                 startActivity(intent);
 
             }
@@ -26,7 +26,7 @@ public class SecondPage extends AppCompatActivity {
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(SecondPage.this,Brightness.class);
+                Intent intent=new Intent(SecondPage.this,StartPage.class);
                 startActivity(intent);
             }
         });

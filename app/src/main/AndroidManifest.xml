@@ -14,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ThirdPage"></activity>
+        <activity android:name=".StartPage"></activity>
+        <activity android:name=".ThirdPage" />
         <activity android:name=".Brightness" />
         <activity android:name=".SecondPage" />
         <activity android:name=".MainActivity">

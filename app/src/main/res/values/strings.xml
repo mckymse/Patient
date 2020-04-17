@@ -16,4 +16,5 @@
     <string name="select">SELECT EYE</string>
     <string name="brightness">BRIGHTNESS LEVEL</string>
     <string name="button2">SAVE</string>
+    <string name="instruction">PLEASE PLUG IN YOUR EARPHONES AND PRESS START BY CLICKING YOUR HEADPHONE</string>
 </resources>
