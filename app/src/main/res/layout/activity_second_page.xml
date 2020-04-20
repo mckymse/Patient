@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SecondPage"
-    android:background="#b51b43">
+    android:background="#76BA1B">
 
     <TextView
         android:layout_width="250dp"
