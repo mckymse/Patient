@@ -5,26 +5,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Brightness"
-    android:background="@color/green">
+    android:background="#b51b43">
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="250dp"
+        android:layout_width="280dp"
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:background="@drawable/textbox"
-        android:fontFamily="monospace"
+        android:fontFamily="sans-serif-smallcaps"
         android:gravity="center"
         android:text="@string/brightness"
         android:textColor="#000"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/sk1"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.505" />
 
     <androidx.appcompat.widget.AppCompatSeekBar
         android:layout_width="300dp"
@@ -42,16 +44,16 @@
 
     <TextView
         android:id="@+id/tv1"
-        android:layout_width="200dp"
-        android:layout_height="40dp"
+        android:layout_width="230dp"
+        android:layout_height="48dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:hint="LEVEL"
-        android:gravity="center"
         android:background="@drawable/textbox"
-        android:fontFamily="monospace"
+        android:fontFamily="sans-serif-smallcaps"
+        android:gravity="center"
+        android:hint="LEVEL"
         android:text=""
         android:textColor="#000"
         android:textSize="30sp"

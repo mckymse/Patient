@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SecondPage"
-    android:background="@color/green">
+    android:background="#b51b43">
 
     <TextView
         android:layout_width="250dp"
@@ -35,7 +35,7 @@
 
         android:layout_marginBottom="16dp"
         android:background="@drawable/textbox"
-        android:fontFamily="monospace"
+        android:fontFamily="sans-serif-smallcaps"
         android:text="@string/left"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
