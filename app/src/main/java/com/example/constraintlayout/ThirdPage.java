@@ -3,8 +3,10 @@ package com.example.constraintlayout;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.animation.Animator;
+import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.WindowManager;
@@ -36,36 +38,109 @@ public class ThirdPage extends AppCompatActivity {
     }
 
     protected void initial() {
+        final Handler handler = new Handler();
         Log.i("infer", mHeight + "   " + mWidth);
-        ImageView vw = findViewById(R.id.imageView3);
-        Random rand = new Random();
-        int yAxis = rand.nextInt(mHeight);
-        int xAxis = rand.nextInt(mWidth);
-        vw.setY(0f);
-        vw.setX(xAxis);
-        ob1 = ObjectAnimator.ofFloat(vw, "y", mHeight / 2);
-        ob1.setDuration(4000);
-        ob1.start();
-//        System.out.println("Stage1");
-//        vw.setX(((float) 100));
-//        vw.setY((float) 500);
+        final ImageView targetView = findViewById(R.id.imageView3);
+        mHeight = mHeight - 112;
+        mWidth = mWidth - 50;
+        final Random rand = new Random(100);
+//        final int yAxis = rand.nextInt(2*mHeight)- mHeight;
+//        final int xAxis = rand.nextInt(mWidth);
+
+        targetView.setY(-mHeight);
+        targetView.setX(rand.nextInt(mWidth));
+
+        ObjectAnimator animator1 = ObjectAnimator.ofFloat(targetView, "translationY", 0);
+        animator1.setRepeatCount(0);
+        animator1.setDuration(3000);
+        animator1.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) { }
+            @Override
+            public void onAnimationCancel(Animator animation) {}
+            @Override
+            public void onAnimationRepeat(Animator animation) {}
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                // Call this method again, but with the two colors switched around.
+                targetView.setY(rand.nextInt(mHeight));
+                targetView.setX(mWidth);
+            }
+        });
+
+        ObjectAnimator animator2 = ObjectAnimator.ofFloat(targetView, "translationX", mWidth/2);
+        animator2.setRepeatCount(0);
+        animator2.setDuration(3000);
+        animator2.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) { }
+            @Override
+            public void onAnimationCancel(Animator animation) {}
+            @Override
+            public void onAnimationRepeat(Animator animation) {}
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                // Call this method again, but with the two colors switched around.
+                targetView.setY(mHeight);
+                targetView.setX(rand.nextInt(mWidth));
+            }
+        });
+
+        ObjectAnimator animator3 = ObjectAnimator.ofFloat(targetView, "translationY", 0);
+        animator3.setRepeatCount(0);
+        animator3.setDuration(3000);
+        animator3.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) { }
+            @Override
+            public void onAnimationCancel(Animator animation) {}
+            @Override
+            public void onAnimationRepeat(Animator animation) {}
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                // Call this method again, but with the two colors switched around.
+                targetView.setY(rand.nextInt(mHeight));
+                targetView.setX(0);
+            }
+        });
+        ObjectAnimator animator4 = ObjectAnimator.ofFloat(targetView, "translationX", mWidth/2);
+        animator4.setRepeatCount(0);
+        animator4.setDuration(3000);
+
+//sequencial animation
+        AnimatorSet set = new AnimatorSet();
+        set.play(animator1).before(animator2);
+        set.play(animator2).before(animator3);
+        set.play(animator3).before(animator4);
+        set.start();
+      //  set.start();
+        //top - Bottom
+//        vw.setY(yAxis);
+//        vw.setX(2f);
 //        ob1 = ObjectAnimator.ofFloat(vw, "x", mWidth / 2);
-//        ob1.setDuration(5000);
-//        ob1.start();
-//        System.out.println("Stage2");
-//        ob1 = ObjectAnimator.ofFloat(vw, "y", mHeight / 2 );
 //        ob1.setDuration(4000);
 //        ob1.start();
-//        vw.setY((float)mWidth);
-//        vw.setX((float)xAxis);
-//        System.out.println("Stage3");
-//        vw.setX(5f);
-//        yAxis = rand.nextInt(mHeight);
-//        vw.setY((float)yAxis);
-//        ob1 = ObjectAnimator.ofFloat(vw, "x", mHeight / 2);
+
+//     //Bottom - top
+//        vw.setY(2000f);
+//        vw.setX(500f);
+//        ob1 = ObjectAnimator.ofFloat(vw, "y", mHeight / 2);
 //        ob1.setDuration(4000);
 //        ob1.start();
-//        System.out.println("Stage4");
+        //right - left
+//        vw.setY(-500f);
+//        vw.setX(1000f);
+//        ob1 = ObjectAnimator.ofFloat(vw, "x",mWidth/2);
+//        ob1.setDuration(4000);
+//        ob1.start();
+        //left-right
+//        vw.setY(-500f);
+//        vw.setX(0f);
+//        ob1 = ObjectAnimator.ofFloat(vw, "x",mWidth/2);
+//        ob1.setDuration(4000);
+//        ob1.start();
+
+
     }
 
     public boolean onTouchEvent(MotionEvent e) {
@@ -76,10 +151,11 @@ public class ThirdPage extends AppCompatActivity {
         ImageView vw =  findViewById(R.id.imageView3);
         float x = e.getX();
         float y = e.getY();
-        ob1.cancel();
-        Toast.makeText(this,"Current co-ordinates: "+vw.getX() +" "+vw.getY(),Toast.LENGTH_LONG).show();
+        //ob1.cancel();
+        Toast.makeText(this,"Current co-ordinates: "+vw.getX() +" "+vw.getY(),Toast.LENGTH_SHORT).show();
         results.add(x);
         results.add(y);
+        System.out.println(results.toString());
         return true;
     }
 }
